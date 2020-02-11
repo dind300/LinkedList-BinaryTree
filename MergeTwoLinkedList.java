@@ -13,7 +13,7 @@ public class MergeTwoLinkedList {
 		LinkListNode node9=new LinkListNode(5,node8);
 		LinkListNode node10=new LinkListNode(3,node9);
 		LinkListNode node11=new LinkListNode();
-		node11=mergeTwoLinkList(node10, node5, node11);
+		node11=mergeTwoLinkList(node10, node5);
 		while(node11!=null) {
 			System.out.print(node11.getValue()+" ");
 			node11=node11.getNext();
@@ -21,32 +21,32 @@ public class MergeTwoLinkedList {
 
 	}
 	
-	public static LinkListNode mergeTwoLinkList(LinkListNode node1,LinkListNode node2,LinkListNode newNode) {
+	public static LinkListNode mergeTwoLinkList(LinkListNode node1,LinkListNode node2) {
 		if(node1==null&&node2==null) {
 			return null;
 		}
 		if(node1==null) {
 			LinkListNode newNodes=new LinkListNode();
-			newNodes.setNext(mergeTwoLinkList(node1, node2.getNext(), newNode));
+			newNodes.setNext(mergeTwoLinkList(node1, node2.getNext()));
 			newNodes.setValue(node2.getValue());
 			return newNodes;
 		}
 		if(node2==null) {
 			LinkListNode newNodes=new LinkListNode();
-			newNodes.setNext(mergeTwoLinkList(node1.getNext(), node2, newNode));
+			newNodes.setNext(mergeTwoLinkList(node1.getNext(), node2));
 			newNodes.setValue(node1.getValue());
 			return newNodes;
 		}
 		if(node1.getValue()>node2.getValue()) {
 			LinkListNode newNodes=new LinkListNode();
 			newNodes.setValue(node2.getValue());
-			newNodes.setNext(mergeTwoLinkList(node1, node2.getNext(), newNode));
+			newNodes.setNext(mergeTwoLinkList(node1, node2.getNext()));
 			return newNodes;
 		}
 		else {
 			LinkListNode newNodes=new LinkListNode();
 			newNodes.setValue(node1.getValue());
-			newNodes.setNext(mergeTwoLinkList(node1.getNext(), node2, newNode));
+			newNodes.setNext(mergeTwoLinkList(node1.getNext(), node2));
 			return newNodes;
 		}
 	}
