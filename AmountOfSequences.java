@@ -19,15 +19,17 @@ public class AmountOfSequences {
 		boolean flag=false;
 		int counter=0;
 		while(node.getNext()!=null) {
-			if(node.getValue()==node.getNext().getValue()) {
-				if(!flag) {
-					counter++;
+			if(node.getValue()==num) {
+			  if(node.getValue()==node.getNext().getValue()) {
+			    if(!flag) {
+				counter++;
 				}
 				flag=true;
-			}
-			else {
+				}
+				else {
 				flag=false;
-			}
+				}
+				}
 			node=node.getNext();
 			
 		}
