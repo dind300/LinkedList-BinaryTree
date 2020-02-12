@@ -23,8 +23,8 @@ public class AmountOfSequences {
 			  if(node.getValue()==node.getNext().getValue()) {
 			    if(!flag) {
 				counter++;
+                                flag=true;
 				}
-				flag=true;
 				}
 				else {
 				flag=false;
