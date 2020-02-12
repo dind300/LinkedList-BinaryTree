@@ -26,9 +26,9 @@ public class AmountOfSequences {
                                 flag=true;
 				}
 				}
-			    else {
-			     flag=false;
-			     }
+		        else {
+			  flag=false;
+		        }
 			    }
 			node=node.getNext();
 			
